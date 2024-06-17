@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.parent {
+    padding: 10px;
+    background-color: aquamarine;
+    border: 1px solid darkcyan;
+}
+
+.child {
+    padding: 10px;
+    background-color: rgb(10, 106, 74);
+    border: 1px solid rgb(3, 52, 52);
+}
+
+.head {
+    color: rgb(194, 129, 49);
+}
+
+.replace {
+    font-size: 20px;
+    color: yellow;
+}
