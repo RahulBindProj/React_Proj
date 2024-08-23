@@ -1,0 +1,32 @@
+{
+  "name": "rjs",
+  "version": "1.0.0",
+  "description": "This is React by Rahul Bind",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "namaste",
+    "react",
+    "react",
+    "rahul",
+    "bind"
+  ],
+  "author": "Rahul Bind",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "uri-js": "^4.2.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
