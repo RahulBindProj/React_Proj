@@ -1,6 +1,7 @@
 // import User from "./User";
 import UserClass from "./UserClass";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 // const About = () => {
 //   return (
 //     <>
@@ -28,6 +29,10 @@ class About extends Component {
     return (
       <>
         <h1>About US</h1>
+
+        <UserContext.Consumer>
+          {(data) => <h1>User : {data.loggedInUser}</h1>}
+        </UserContext.Consumer>
         <UserClass name={"First Component()"} location={"I am from Mumbai"} />
       </>
     );

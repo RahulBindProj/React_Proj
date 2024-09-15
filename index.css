@@ -1,4 +1,23 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .shimmer-card {
+  width: 280px;
+  padding: 10px;
+  height: 360px;
+  border-radius: 5px;
+  background-color: rgba(225, 227, 225, 1);
+  margin: 10px;
+  background: linear-gradient(to right, #eee 40%, #fafafa 50%, #eee 60%);
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+/* html,
 body,
 div,
 span,
@@ -86,7 +105,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -150,7 +168,6 @@ table {
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
 }
 
 .rest-card {
@@ -236,4 +253,4 @@ table {
   font-size: 20px;
   font-weight: bold;
   padding: 20px;
-}
+} */

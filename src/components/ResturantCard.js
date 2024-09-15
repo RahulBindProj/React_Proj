@@ -6,20 +6,17 @@ const ResturantCard = (props) => {
     restData?.info; // optional chaining and destructiong
   return (
     <>
-      <div className="rest-card">
+      <div className="rest-card m-4 p-4 w-[300] rounded-md bg-gray-200 hover:shadow-lg">
         <img
-          className="res-logo"
+          className="res-logo rounded-md"
           src={IMG_CDN_URL + cloudinaryImageId}
           alt=""
         />
-        <h3 className="Amber-foods">{name}</h3>
-        <br />
+        <h3 className="rest-name  font-bold">{name}</h3>
         <h4 className="cuisine">{cuisines.join(",")}</h4>
-        <span className="rating">{avgRating} star</span>
-
-        <span className="cost">{costForTwo}</span>
-
-        <span className="eta">{sla.deliveryTime} minutes Away</span>
+        <p className="rating">{avgRating} star</p>
+        <p className="cost">{costForTwo}</p>
+        <p className="eta">{sla.deliveryTime} minutes Away</p>
       </div>
       {/* <div className="card">
         <img src={IMG_CDN_URL + restData.info.cloudinaryImageId} />
@@ -47,6 +44,23 @@ const ResturantCard = (props) => {
       </div> */}
     </>
   );
+};
+
+//Higher Order Component - It takes component as a Input and return a component
+
+export const withOpenLabel = (ResturantCard) => {
+  //Compnent returning a function ,, iskliye humlog ne ye return main function ko return kiya hai
+  return (props) => {
+    //Ye retunr normal function main jaise JSX return krte hai woh hai yes
+    return (
+      <>
+        <label className="bg-black px-3   py-1 absolute text-white rounded-md">
+          Open Now
+        </label>
+        <ResturantCard {...props} />
+      </>
+    );
+  };
 };
 
 export default ResturantCard;
