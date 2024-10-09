@@ -37,3 +37,13 @@ Food Ordering App
     -Address
     -Contacts
  */ -->
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- provide the store to our application
+- Connect our store to our app
+- Slic (catSlice)
+- disptach (action)
+- Selector

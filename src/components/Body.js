@@ -1,9 +1,10 @@
 import ResturantCard, { withOpenLabel } from "./ResturantCard";
 // import resList from "../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   let [searchText, setsearchText] = useState("");
@@ -56,6 +57,8 @@ const Body = () => {
     return <h1>Looks like your are offline</h1>;
   }
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   //coditional rendering
   return listOfResturants.length === 0 ? (
     <Shimmer />
@@ -92,7 +95,7 @@ const Body = () => {
           onClick={() => {
             filterRest = listOfResturants.filter((res) => {
               // return res.info.rating.rating_text > 4;
-              return res.info.avgRating > 4;
+              return res.info.avgRating > 4.5;
             });
 
             setlistOfResturants(filterRest);
@@ -100,6 +103,17 @@ const Body = () => {
         >
           Top Rated Resturant
         </button>
+        <div className="search mt-3 mb-3 ml-10">
+          UserName
+          <input
+            type="text"
+            className="search-box border-solid border-black border p-2"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="rest-container flex flex-wrap justify-center">
         {filteredResturants.map((resturant) => (

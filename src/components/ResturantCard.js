@@ -1,6 +1,11 @@
 import { IMG_CDN_URL } from "../utils/constant";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
+
+// console.log(loggedInUser);
 
 const ResturantCard = (props) => {
+  const { loggedInUser } = useContext(UserContext);
   const { restData } = props;
   const { cloudinaryImageId, name, cuisines, avgRating, id, costForTwo, sla } =
     restData?.info; // optional chaining and destructiong
@@ -17,31 +22,8 @@ const ResturantCard = (props) => {
         <p className="rating">{avgRating} star</p>
         <p className="cost">{costForTwo}</p>
         <p className="eta">{sla.deliveryTime} minutes Away</p>
+        <p className="userName">User : {loggedInUser}</p>
       </div>
-      {/* <div className="card">
-        <img src={IMG_CDN_URL + restData.info.cloudinaryImageId} />
-        <h3>{name}</h3>
-        <h5>{restData.info.cuisines.join(", ")}</h5>
-        <h5>{areaName}</h5>
-        <span>
-          <h4
-            style={
-              avgRatingString < 4
-                ? { backgroundColor: "var(--light-red)" }
-                : avgRatingString === "--"
-                ? { backgroundColor: "white", color: "black" }
-                : { color: "white" }
-            }
-          >
-            <i className="fa-solid fa-star"></i>
-            {avgRatingString}
-          </h4>
-          <h4>•</h4>
-          <h4>{sla?.lastMileTravelString ?? "2.0 km"}</h4>
-          <h4>•</h4>
-          <h4>{costForTwo ?? "₹200 for two"}</h4>
-        </span>
-      </div> */}
     </>
   );
 };
